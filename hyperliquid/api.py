@@ -10,9 +10,10 @@ from hyperliquid.utils.types import Any
 
 
 class API:
-    def __init__(self, base_url=None):
+    def __init__(self, base_url=None, proxy=None):
         self.base_url = base_url or MAINNET_API_URL
         self.session = requests.Session()
+        self.session.proxies = proxy
         self.session.headers.update({"Content-Type": "application/json"})
         self._logger = logging.getLogger(__name__)
 

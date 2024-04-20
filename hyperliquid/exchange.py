@@ -35,15 +35,16 @@ class Exchange(API):
     DEFAULT_SLIPPAGE = 0.05
 
     def __init__(
-        self,
-        wallet: LocalAccount,
-        base_url: Optional[str] = None,
-        meta: Optional[Meta] = None,
-        vault_address: Optional[str] = None,
-        account_address: Optional[str] = None,
-        spot_meta: Optional[SpotMeta] = None,
+            self,
+            wallet: LocalAccount,
+            base_url: Optional[str] = None,
+            meta: Optional[Meta] = None,
+            vault_address: Optional[str] = None,
+            account_address: Optional[str] = None,
+            spot_meta: Optional[SpotMeta] = None,
+            proxy=None
     ):
-        super().__init__(base_url)
+        super().__init__(base_url, proxy)
         self.wallet = wallet
         self.vault_address = vault_address
         self.account_address = account_address
